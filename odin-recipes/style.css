@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "JetBrains Mono", sans-serif;
+    background-color: teal;
+    color: antiquewhite;
+    min-height: 100vh;
+    padding: 2rem 1.5rem;
+}
+
+header {
+    text-align: center;
+    padding: 3rem 1rem 2.5rem;
+    border-bottom: 1px solid rgba(250, 235, 215, 0.25);
+    margin-bottom: 2.5rem;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: antiquewhite;
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgba(250, 235, 215, 0.65);
+    letter-spacing: 0.04em;
+}
+
+main {
+    max-width: 640px;
+    text-align: left;
+}
+
+main p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: rgba(250, 235, 215, 0.85);
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(250, 235, 215, 0.55);
+    margin-bottom: 1rem;
+}
+
+.recipe-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.recipe-list li::before {
+    content: "→ ";
+    color: rgba(250, 235, 215, 0.4);
+}
+
+.recipe-list a {
+    color: antiquewhite;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(250, 235, 215, 0.2);
+    padding-bottom: 1px;
+    transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.recipe-list a:hover {
+    color: #fff;
+    border-bottom-color: rgba(250, 235, 215, 0.8);
+}
+
+/* ── Recipe pages ─────────────────────────────────────── */
+
+.back-link {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(250, 235, 215, 0.6);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    margin-bottom: 1.25rem;
+    transition: color 0.15s ease;
+}
+
+.back-link:hover {
+    color: antiquewhite;
+}
+
+.recipe-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 1.75rem 0 2rem;
+    opacity: 0.92;
+}
+
+main ul,
+main ol {
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+main ul li,
+main ol li {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: rgba(250, 235, 215, 0.85);
+    margin-bottom: 0.35rem;
+}
+
+main ul {
+    list-style: disc;
+}
+
+.steps {
+    list-style: none;
+    padding-left: 0;
+    counter-reset: step;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.steps li {
+    counter-increment: step;
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+    margin-bottom: 0 !important;
+}
+
+.steps li::before {
+    content: counter(step);
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: rgba(250, 235, 215, 0.4);
+    letter-spacing: 0.06em;
+    padding-top: 0.15em;
+    min-width: 1.5rem;
+    text-align: right;
+}
+
+.steps li p {
+    margin-bottom: 0;
+}
